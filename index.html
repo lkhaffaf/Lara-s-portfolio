@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lara Al-Khaffaf — Architecture</title>
+  <meta name="description" content="Architecture portfolio of Lara Al-Khaffaf: residential renovation, interior design, landscape masterplanning and construction studies.">
+  <meta name="theme-color" content="#16161a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2316161a'/%3E%3Ctext x='32' y='41' font-family='-apple-system,Helvetica,Arial' font-size='24' font-weight='600' fill='white' text-anchor='middle'%3ELA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Inter is only a fallback for non-Apple devices; load it without blocking first paint -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Three.js is only fetched on pages with a 3D model (see scenes.js) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <div class="bg" id="bgA"></div>
+    <div class="bg" id="bgB"></div>
+    <div class="scrim"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <a class="orb glass brand" href="#/" aria-label="Lara Al-Khaffaf, home">LA</a>
+      <a class="orb glass" id="backBtn" href="#/work" aria-label="Back to all work" hidden></a>
+    </div>
+    <nav class="tabs glass" id="tabs" aria-label="Primary">
+      <span class="tab-ind" aria-hidden="true"></span>
+      <a href="#/" data-tab="home"><span class="tab-ico" data-icon="home"></span><span>Home</span></a>
+      <a href="#/work" data-tab="work"><span class="tab-ico" data-icon="grid"></span><span>Work</span></a>
+      <a href="#/about" data-tab="about"><span class="tab-ico" data-icon="user"></span><span>About</span></a>
+      <a href="#/contact" data-tab="contact"><span class="tab-ico" data-icon="mail"></span><span>Contact</span></a>
+    </nav>
+    <div class="topbar-right">
+      <a class="pill glass" href="assets/Lara-Al-Khaffaf-CV.pdf" target="_blank" rel="noopener"><span data-icon="download"></span>CV</a>
+    </div>
+  </header>
+
+  <aside class="dock glass" id="dock" aria-label="Projects"></aside>
+
+  <main id="view" tabindex="-1"></main>
+
+  <footer class="foot">
+    <span>© <span id="year"></span> Lara Al-Khaffaf</span>
+    <button type="button" id="toTop">Back to top</button>
+  </footer>
+
+  <!-- Follows the pointer over the work index (fine pointers only) -->
+  <div class="cursor-preview" id="cursorPreview" aria-hidden="true"></div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+    <div class="lb-dim" id="lbDim"></div>
+    <div class="lb-stage" id="lbStage">
+      <figure class="lb-figure" id="lbFigure"><img id="lbImg" alt="" draggable="false"></figure>
+    </div>
+    <div class="lb-bar glass-thick"><span id="lbCap"></span><span class="lb-count" id="lbCount"></span></div>
+    <button class="orb glass lb-btn lb-close" id="lbClose" aria-label="Close"></button>
+    <button class="orb glass lb-btn lb-prev" id="lbPrev" aria-label="Previous image"></button>
+    <button class="orb glass lb-btn lb-next" id="lbNext" aria-label="Next image"></button>
+  </dialog>
+
+  <div class="toast glass-thick" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript><p class="noscript">This portfolio needs JavaScript turned on to display.</p></noscript>
+  <script src="app.js"></script>
+</body>
+</html>
